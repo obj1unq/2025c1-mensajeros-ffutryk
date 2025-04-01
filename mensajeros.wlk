@@ -3,6 +3,11 @@ object paquete {
   
   method estaPagado() = estaPagado
   
+  method puedeSerEntregado(
+    mensajero,
+    destino
+  ) = estaPagado && destino.puedePasar(mensajero)
+  
   method marcarComoPagado() {
     estaPagado = true
   }
@@ -19,11 +24,6 @@ object laMatrix {
 object chuckNorris {
   const property peso = 900
   const property puedeLlamar = true
-  
-  method puedeEntregar(
-    paquete,
-    destino
-  ) = paquete.estaPagado() && destino.puedePasar(self)
 }
 
 object neo {
@@ -32,11 +32,6 @@ object neo {
   //  En vez de tener credito: Numero, podría tener tieneCredito: Booleano. Lo puse como número por si en un "futuro" se incluye un metodo llamar() o similar que consuma crédito.
   
   method puedeLlamar() = credito > 0
-  
-  method puedeEntregar(
-    paquete,
-    destino
-  ) = paquete.estaPagado() && destino.puedePasar(self)
 }
 
 object lincolnHawk {
@@ -53,11 +48,6 @@ object lincolnHawk {
   method vehiculo(_vehiculo) {
     vehiculo = _vehiculo
   }
-  
-  method puedeEntregar(
-    paquete,
-    destino
-  ) = paquete.estaPagado() && destino.puedePasar(self)
 }
 
 object bicicleta {
