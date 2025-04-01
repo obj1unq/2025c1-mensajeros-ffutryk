@@ -15,3 +15,13 @@ object puenteBrooklyn {
 object laMatrix {
   method puedePasar(mensajero) = mensajero.puedeLlamar()
 }
+
+object chuckNorris {
+  const property peso = 900
+  const property puedeLlamar = true
+  
+  method puedeEntregar(
+    paquete,
+    destino
+  ) = paquete.estaPagado() && destino.puedePasar(self)
+}
