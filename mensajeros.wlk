@@ -25,3 +25,16 @@ object chuckNorris {
     destino
   ) = paquete.estaPagado() && destino.puedePasar(self)
 }
+
+object neo {
+  const property peso = 0
+  var credito = 10
+  //  En vez de tener credito: Numero, podría tener tieneCredito: Booleano. Lo puse como número por si en un "futuro" se incluye un metodo llamar() o similar que consuma crédito.
+  
+  method puedeLlamar() = credito > 0
+  
+  method puedeEntregar(
+    paquete,
+    destino
+  ) = paquete.estaPagado() && destino.puedePasar(self)
+}
