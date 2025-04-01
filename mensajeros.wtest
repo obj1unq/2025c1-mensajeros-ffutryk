@@ -1,13 +1,13 @@
 import mensajeros.*
 
 test "El paquete de George que no está pago no puede ser llevado por Neo a la matrix." {
-  assert.notThat(neo.puedeEntregar(paquete, laMatrix))
+  assert.notThat(paquete.puedeSerEntregado(neo, laMatrix))
 }
 
 test "El paquete de George que sí está pago puede ser llevado por Chuck a la matrix." {
   paquete.marcarComoPagado()
   
-  assert.that(chuckNorris.puedeEntregar(paquete, laMatrix))
+  assert.that(paquete.puedeSerEntregado(chuckNorris, laMatrix))
 }
 
 test "El paquete de George que sí está pago no puede ser llevado por Lincoln Hawk (80kg) a Brooklyn si es que utiliza un camión con un acoplado." {
@@ -16,7 +16,7 @@ test "El paquete de George que sí está pago no puede ser llevado por Lincoln H
   camion.acoplar()
   lincolnHawk.vehiculo(camion)
   
-  assert.notThat(lincolnHawk.puedeEntregar(paquete, puenteBrooklyn))
+  assert.notThat(paquete.puedeSerEntregado(lincolnHawk, puenteBrooklyn))
 }
 
 test "La entrega anterior puede hacerse si Lincoln Hawk usa una bicicleta." {
@@ -24,5 +24,5 @@ test "La entrega anterior puede hacerse si Lincoln Hawk usa una bicicleta." {
   lincolnHawk.peso(80)
   lincolnHawk.vehiculo(bicicleta)
 
-  assert.that(lincolnHawk.puedeEntregar(paquete, puenteBrooklyn))
+  assert.that(paquete.puedeSerEntregado(lincolnHawk, puenteBrooklyn))
 }
