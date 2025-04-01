@@ -38,3 +38,40 @@ object neo {
     destino
   ) = paquete.estaPagado() && destino.puedePasar(self)
 }
+
+object lincolnHawk {
+  var peso = 82
+  var vehiculo = camion
+  const property puedeLlamar = false
+  
+  method peso() = peso + vehiculo.peso()
+  
+  method peso(_peso) {
+    peso = _peso
+  }
+  
+  method vehiculo(_vehiculo) {
+    vehiculo = _vehiculo
+  }
+  
+  method puedeEntregar(
+    paquete,
+    destino
+  ) = paquete.estaPagado() && destino.puedePasar(self)
+}
+
+object bicicleta {
+  const property peso = 10
+}
+
+object camion {
+  const peso = 500
+  var cantidadDeAcoples = 0
+  const pesoPorAcople = 500
+  
+  method peso() = peso + (cantidadDeAcoples * pesoPorAcople)
+  
+  method acoplar() {
+    cantidadDeAcoples += 1
+  }
+}
