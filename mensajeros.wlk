@@ -42,14 +42,14 @@ object neo {
 }
 
 object lincolnHawk {
-  var peso = 82
+  var pesoCorporal = 82
   var vehiculo = camion
   const property puedeLlamar = false
   
-  method peso() = peso + vehiculo.peso()
+  method peso() = pesoCorporal + vehiculo.peso()
   
-  method peso(_peso) {
-    peso = _peso
+  method pesoCorporal(_pesoCorporal) {
+    pesoCorporal = _pesoCorporal
   }
   
   method vehiculo(_vehiculo) {
