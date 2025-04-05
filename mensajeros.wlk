@@ -11,6 +11,10 @@ object paquete {
   method marcarComoPagado() {
     estaPagado = true
   }
+
+  method marcarComoImpago() {
+    estaPagado = false
+  }
 }
 
 object puenteBrooklyn {
