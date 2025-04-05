@@ -13,7 +13,7 @@ test "El paquete de George que sí está pago puede ser llevado por Chuck a la m
 test "El paquete de George que sí está pago no puede ser llevado por Lincoln Hawk (80kg) a Brooklyn si es que utiliza un camión con un acoplado." {
   paquete.marcarComoPagado()
   lincolnHawk.pesoCorporal(80)
-  camion.acoplar()
+  camion.cantidadDeAcoples(1)
   lincolnHawk.vehiculo(camion)
   
   assert.notThat(paquete.puedeSerEntregado(lincolnHawk, puenteBrooklyn))

@@ -68,7 +68,7 @@ object camion {
   
   method peso() = peso + (cantidadDeAcoples * pesoPorAcople)
   
-  method acoplar() {
-    cantidadDeAcoples += 1
+  method cantidadDeAcoples(_cantidadDeAcoples) {
+    cantidadDeAcoples = _cantidadDeAcoples
   }
 }
