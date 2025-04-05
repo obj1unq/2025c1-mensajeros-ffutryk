@@ -11,7 +11,7 @@ object paquete {
   method marcarComoPagado() {
     estaPagado = true
   }
-
+  
   method marcarComoImpago() {
     estaPagado = false
   }
@@ -32,10 +32,13 @@ object chuckNorris {
 
 object neo {
   const property peso = 0
-  var credito = 10
-  //  En vez de tener credito: Numero, podría tener tieneCredito: Booleano. Lo puse como número por si en un "futuro" se incluye un metodo llamar() o similar que consuma crédito.
+  var tieneCredito = true
   
-  method puedeLlamar() = credito > 0
+  method puedeLlamar() = tieneCredito
+  
+  method tieneCredito(_tieneCredito) {
+    tieneCredito = _tieneCredito
+  }
 }
 
 object lincolnHawk {
